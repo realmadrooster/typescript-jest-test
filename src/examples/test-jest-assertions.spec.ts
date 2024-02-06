@@ -28,12 +28,12 @@ describe('Objects', () => {
     const person = { name: 'Luiz', age: 44 };
     const anotherPerson = { ...person };
 
-    expect(person).toBe(anotherPerson);
+    //expect(person).toBe(anotherPerson); //obbjetos diferentes
     expect(person).toEqual(anotherPerson);
     expect(person).toHaveProperty('age');
-    expect(person).toHaveProperty('age', 30);
+    expect(person).toHaveProperty('age', 44);
     expect(person).not.toHaveProperty('lastname');
 
-    expect(person.name).toBe('Luiz');
+    expect(person.name).toEqual('Luiz');
   });
 });
