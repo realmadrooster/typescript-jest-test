@@ -6,7 +6,7 @@ const createSut = (name: string, price: number): Product => {
 
 describe('Messaging', () => {
   afterEach(() => jest.clearAllMocks()); //limpa os mocks depois de cada teste
-  it('should returned undefined', () => {
+  it('should have properties name and price', () => {
     //system under test
     const sut = createSut('camiseta', 49.9);
     expect(sut).toHaveProperty('name', 'camiseta');
