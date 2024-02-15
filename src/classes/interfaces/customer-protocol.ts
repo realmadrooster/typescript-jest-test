@@ -10,6 +10,6 @@ export interface IndividualCustomerProtocol {
 }
 
 export interface EnterpriseCustomerProtocol {
-  Name: string;
+  name: string;
   cnpj: string;
 }
