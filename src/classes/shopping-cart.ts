@@ -5,7 +5,6 @@ import { ShoppingCartProtocol } from './interfaces/shopping-cart-protocol';
 // type OrderStatus = 'open' | 'closed';
 // import { OrderStatus } from './interfaces/order-status';
 
-
 export class ShoppingCart implements ShoppingCartProtocol {
   private readonly _items: CartItem[] = [];
   // private _orderStatus: OrderStatus = 'open'; //
@@ -16,7 +15,7 @@ export class ShoppingCart implements ShoppingCartProtocol {
     this._items.push(item);
   }
 
-  removeItem( index: number): void {
+  removeItem(index: number): void {
     this._items.splice(index, 1);
   }
 
@@ -30,7 +29,9 @@ export class ShoppingCart implements ShoppingCartProtocol {
   // }
 
   total(): number {
-    return +this._items.reduce((total, next) => total + next.price, 0).toFixed(2);// o sinal de + junto ao this permite que eu use a funçao tofixed que retorna uma string retornar um number
+    return +this._items
+      .reduce((total, next) => total + next.price, 0)
+      .toFixed(2); // o sinal de + junto ao this permite que eu use a funçao tofixed que retorna uma string retornar um number
   }
 
   totalWithDiscount(): number {
@@ -48,8 +49,8 @@ export class ShoppingCart implements ShoppingCartProtocol {
   //   this.saveOrder();
   //   this.clear();
   // }
-// so tem uma validaçao entao ficara no codigo
-  isEmpty(): Boolean {
+  // so tem uma validaçao entao ficara no codigo
+  isEmpty(): boolean {
     return this._items.length === 0;
   }
 
